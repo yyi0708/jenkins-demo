@@ -1,4 +1,4 @@
-# jenkins-demo
+# jenkins-demo-ci/cd
 
 ## Project setup
 ```
