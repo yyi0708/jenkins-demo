@@ -30,7 +30,7 @@ pipeline{
     }
     post{
         always{
-            echo "========always1========"
+            echo "========always12========"
         }
         success{
             echo "========pipeline executed successfully ========"
