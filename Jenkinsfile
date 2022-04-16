@@ -4,7 +4,7 @@ pipeline{
         stage("stage-A"){
             steps{
                 echo "========executing A========"
-                echo "printenv"
+                echo "1234"
             }
         }
         stage("stage-B"){
