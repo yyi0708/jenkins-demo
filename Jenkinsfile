@@ -3,7 +3,6 @@ pipeline{
     stages{
         stage("stage-A"){
             steps{
-                checkout scm
                 echo "========executing A========"
             }
         }
@@ -31,7 +30,7 @@ pipeline{
     }
     post{
         always{
-            echo "========always========"
+            echo "========always1========"
         }
         success{
             echo "========pipeline executed successfully ========"
