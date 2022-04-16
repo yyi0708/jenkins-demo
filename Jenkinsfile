@@ -11,7 +11,7 @@ pipeline{
             steps{
                 checkout scm
                 echo "========executing A========"
-                sh 'printenv'
+                sh 'printenv' 
             }
         }
         stage("stage-B"){
