@@ -9,9 +9,9 @@ pipeline{
                 AN_ACCESS_KEY = credentials('my-prefined-secret-text') 
             }
             steps{
+                checkout scm
                 echo "========executing A========"
                 sh 'printenv'
-                echo "${currentBuild}"
             }
         }
         stage("stage-B"){
