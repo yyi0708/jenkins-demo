@@ -1,17 +1,9 @@
 pipeline{
     agent any
-    environment { 
-        CC = 'clang'
-    }
     stages{
         stage("stage-A"){
-            environment { 
-                AN_ACCESS_KEY = credentials('my-prefined-secret-text') 
-            }
             steps{
-                checkout scm
                 echo "========executing A========"
-                sh 'printenv' 
             }
         }
         stage("stage-B"){
