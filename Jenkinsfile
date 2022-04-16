@@ -3,6 +3,7 @@ pipeline{
     stages{
         stage("stage-A"){
             steps{
+                checkout scm
                 echo "========executing A========"
             }
         }
