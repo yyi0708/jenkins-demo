@@ -1,20 +1,30 @@
 pipeline{
     agent any
     stages{
-        stage("A"){
+        stage("stage-A"){
             steps{
                 echo "========executing A========"
             }
-            post{
-                always{
-                    echo "========always========"
+        }
+        stage("stage-B"){
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+        stage("stage-C"){
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'Deploying'
             }
         }
     }
